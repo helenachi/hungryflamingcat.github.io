@@ -6,7 +6,12 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink } from 'reactstrap';
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem 
+} from 'reactstrap';
 
 export default class NavBar extends React.Component {
   navOptions = [
@@ -14,23 +19,23 @@ export default class NavBar extends React.Component {
       route: '/',
       name: 'Home'
     }
-    // ,
-    // {
-    //   route: '/about',
-    //   name: 'About'
-    // },
-    // {
-    //   route: '/ReadingOlympics',
-    //   name: 'Reading Olympics'
-    // },
-    // {
-    //   route: '/parents',
-    //   name: 'For Parents'
-    // },
-    // {
-    //   route: '/search',
-    //   name: 'Search'
-    // }
+    ,
+    {
+      route: '/about',
+      name: 'About'
+    },
+    {
+      route: '/contact',
+      name: 'Contact Me'
+    },
+    {
+      route: '/projects',
+      name: 'Projects'
+    },
+    {
+      route: '/blog',
+      name: 'Blog'
+    }
   ];
 
 
@@ -51,14 +56,12 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar classname="navbar-light" expand="md" >
-          <NavbarBrand href="/">
-            Helena
-          </NavbarBrand>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Helena Chi</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="mr-auto" navbar>
-              {this.navigationOptions.map(({ route, name }) => {
+            <Nav className="ml-auto" navbar>
+              {this.navOptions.map(( {route, name} ) => {
                 return (
                   <NavItem key={name}>
                     <NavLink href={route}>{name}</NavLink>

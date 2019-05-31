@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NavBar from './components/NavBar'
 import Home from './pages/Home'
-import logo from './logo.svg';
+import About from './pages/About'
+// import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -16,14 +18,23 @@ class App extends Component {
       //     To get started, edit <code>src/App.js</code> and save to reload.
       //   </p>
       // </div>
-      // <Router>
-      //   <div>
-      //     <Switch>
-      //       <Route exact path="/" component={Home} />
-      //     </Switch>
-      //   </div>
-      // </Router>
-      <Home />
+
+      
+      <Router>
+        <div>
+          <Route path="/" component={NavBar} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            {/* <Route exact path="/contact" component={ContactMe} />
+            <Route exact path="/projects" component={Projects} /> */}
+
+          </Switch>
+        </div>
+      </Router>
+
+
+      // <NavBar />
     );
   }
 }
