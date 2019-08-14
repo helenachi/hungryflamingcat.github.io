@@ -6,7 +6,7 @@ class Projects extends Component {
       <div class="container">
         <div class="blurb">
           <h1>My Projects</h1>
-          <p>Projects to be featured here soon!.</p>
+          <p>Projects to be featured here soon!</p>
         </div>
       </div>
     );
